@@ -1,0 +1,96 @@
+@import '../../preloader-page/preloader-page.component.scss';
+.sites-container{
+    padding-top: 5rem;
+    min-height: 900px;
+    position: relative;
+    .wrapper {
+        margin-top: 0;
+    }
+    article{
+        color: #ffffff;
+    }
+    .badge{
+        padding: .75em .6em;
+        width: 95px;
+        outline: none;
+        border: 0;
+    }
+    .badge-primary{
+        background-color: #50d6d6;
+    }
+    .site-deck{
+        padding:20px;
+        border-bottom: 1px solid #50d6d6;
+    } 
+    .site-deck:last-child{
+        border-bottom: none;
+    }
+    .site-card-img{
+        height: 140px;
+        width: 100%;
+        opacity: 0.8;
+        border: 1px solid #ccc;
+    }
+    .site-card-rating{
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        border: 3px solid #50d6d6;
+        color: #50d6d6;
+        text-align: center;
+        margin-bottom: 1.8rem;
+        line-height: 2rem;
+    }
+    .site-card-link{
+        color:#50d6d6;
+        font-size: 1.5rem;
+    }
+    .site-card-price-container{
+        color: #ef762f;
+    }
+    .site-card-icon-bar{
+        position: absolute;
+        bottom: 0;
+    }
+    .site-card-right > div{
+        margin: 0;
+    }
+    .site-card-left > div{
+        width: 100%;
+        height: 100%;
+    }
+    .breadcrumb{
+        background-color: inherit;
+        font-size: 1.5rem;
+        .breadcrumb-item > b > a{
+            color: #50d6d6;
+        }
+    }
+}
+#wrapper{
+    position: fixed;
+    width: 100%;
+    height: 800px;
+    transition: 1000ms;
+    background-position: 50% 50%;
+    background-size: cover;
+    opacity: 0.3;
+}
+.rentalcars{
+    background-image: url("../../../assets/images/transporttypes/type0.jpg");
+}
+.railtravels{
+    background-image: url("../../../assets/images/transporttypes/type1.jpg");
+}
+.flights{
+    background-image: url("../../../assets/images/transporttypes/type2.jpg");
+}
+.motorcycle{
+    background-image: url("../../../assets/images/transporttypes/type3.jpg");
+}
+.bus{
+    background-image: url("../../../assets/images/transporttypes/type4.jpg");
+}
+.ferries{
+    background-image: url("../../../assets/images/transporttypes/type5.jpg");
+}

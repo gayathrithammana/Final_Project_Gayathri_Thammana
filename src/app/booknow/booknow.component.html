@@ -1,0 +1,73 @@
+<app-header></app-header>
+  <div id="wrapper"></div>
+  <h1>Time Your Adventure</h1>
+    
+  <div class="container booknow-container">
+    <div class="row col-12 m-0">
+        <div id="pickadate" class="col-6 m-auto">
+            <h4>Start Date</h4>
+            <div class="row col-12">
+                <mat-form-field>
+                    <input id="InputDate" matInput [matDatepicker]= "myDatePicker" placeholder="Choose a Date">
+                    <mat-datepicker-toggle  [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker  #myDatePicker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="row col-12">
+                <button (click)="myFunc()" id="datepicker" mat-raised-button>Check the Schedule</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row col-12 m-0 mt-5">
+        <div class="col-6 m-auto" *ngIf="dateObject && dateObject.length; else emptyMsg">
+            <table mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="Date">
+                  <th mat-header-cell *matHeaderCellDef> Date</th>
+                  <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+                </ng-container>
+          
+                <ng-container matColumnDef="Time">
+                  <th mat-header-cell *matHeaderCellDef> Time </th>
+                  <td mat-cell *matCellDef="let element"> {{element.Time}} </td>
+                </ng-container>
+                  
+                <ng-container matColumnDef="AdvType">
+                  <th mat-header-cell *matHeaderCellDef> AdvType </th>
+                  <td mat-cell *matCellDef="let element"> {{element.AdvType}} </td>
+                </ng-container>
+          
+                <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef> price </th>
+                  <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="addToCart">
+                    <th mat-header-cell *matHeaderCellDef> Add To Cart </th>
+                    <td mat-cell *matCellDef="let element">
+                        <i class="material-icons shopping-icon" (click)="addToCart(element)">shopping_cart</i>
+                    </td>
+                  </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <ng-template #emptyMsg>
+          <h4 class="m-auto text-white">No Bookings Available</h4>
+        </ng-template>
+    </div>
+
+    </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-body">
+            <p>Added to cart successfully</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="d('Cross click')">OK</button>
+        </div>
+    </ng-template>
+
+<app-footer></app-footer>

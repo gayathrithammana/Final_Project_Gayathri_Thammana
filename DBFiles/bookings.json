@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5cb796dfd6362db3e87aab1e"},"Date":"4-17-2019","AdvType":"4-Night Package","Time":"9:00 am to 11:00 am EST","price":"1000$","Available":"Available","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cb796fed6362db3e87aab1f"},"Date":"4-17-2019","AdvType":"3-Night Package","Time":"11:00 am to 1:00am EST","price":"1000$","Available":"Available","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cb79725d6362db3e87aab20"},"Date":"4-17-2019","AdvType":"Scuba","Time":"3:00 am to 5:00am EST","price":"1000$","Available":"Available","__v":{"$numberInt":"0"}}

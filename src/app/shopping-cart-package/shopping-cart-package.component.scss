@@ -1,0 +1,33 @@
+
+@media only screen and (min-width: 992px){
+
+.card-section{
+    margin: 10% 10%;
+    font-family: Playfair Display;
+    // background: url("../../assets/images/ShoppingCart/shoppingCartPackage.jpg");
+}
+
+.row> div:nth-of-type(2n){
+    background-color: #f2f2f2;
+}
+.row> div:nth-of-type(2n+1){
+    background-color: #e6e6e6;
+}
+
+}
+
+@media only screen and (max-width: 992px){
+    .card-section{
+        margin: 5% 5%;
+        font-family: Playfair Display;
+        
+    }
+    .row> div:nth-of-type(2n){
+        background-color: #f2f2f2;
+        font-size: 1.8em;
+    }
+    .row> div:nth-of-type(2n+1){
+        background-color: #e6e6e6;
+        font-size: 1.8em;
+    }
+}

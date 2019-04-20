@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+.sidenav-modal-class {
+    z-index: 2001 !important;
+    .modal-content{
+        animation-name: example;
+        animation-duration: .9s;
+        display: block;
+    }
+      
+    @keyframes example {
+        0%   { width: 0 }
+        100% { width:100%; }
+    }
+    .modal-dialog{
+        margin: 0;
+        width: 300px;
+        .modal-header .close {
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        .modal-body{
+            margin-left: 15px;
+            a{
+                color: #97a3a2;
+            }
+            a:hover{
+                color: #000000;
+            }
+            a:before{
+                content: '';
+                position: absolute;
+                display: block;
+                left: 3px;
+                height: 20px;
+                width: 2px;
+                background-color: #4a5a5c;
+                transition: opacity 400ms cubic-bezier(0.6, 0.1, 0.48, 0.9);
+                opacity: 0;
+            }
+            a:hover::before{
+                opacity: 1;
+            }
+        }
+    }
+}
+/* You can add global styles to this file, and also import other style files */
+.sidenav-modal-class {
+    z-index: 2001 !important;
+    .modal-content{
+        animation-name: example;
+        animation-duration: .9s;
+        display: block;
+    }
+      
+    @keyframes example {
+        0%   { width: 0 }
+        100% { width:100%; }
+    }
+    .modal-dialog{
+        margin: 0;
+        width: 300px;
+        .modal-header .close {
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        .modal-body{
+            margin-left: 15px;
+            a{
+                color: #97a3a2;
+            }
+            a:hover{
+                color: #000000;
+            }
+            a:before{
+                content: '';
+                position: absolute;
+                display: block;
+                left: 3px;
+                height: 20px;
+                width: 2px;
+                background-color: #4a5a5c;
+                transition: opacity 400ms cubic-bezier(0.6, 0.1, 0.48, 0.9);
+                opacity: 0;
+            }
+            a:hover::before{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+html body{
+    background-color: black;
+}
+.form-group{
+    color:#fff;
+}
+
+
+// Akshay's Changes start below:
+@import "~bootstrap/dist/css/bootstrap.css"; 
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+body{
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Akshay's Changes end here
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

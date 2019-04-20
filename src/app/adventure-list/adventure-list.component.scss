@@ -1,0 +1,125 @@
+#maindiv{
+    padding-top: 200px;
+    height: 800px;
+    z-index: 1;
+    position: relative;
+    margin-left: 640px;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    padding: 70px;
+    margin: 0;
+    text-align: center;
+    color: aliceblue;
+}
+
+h2{
+    margin: 0;  
+    color: aliceblue;
+    font-family: 'Righteous', cursive;
+}
+
+#title{
+    height: 200px;
+    background-color: aqua;
+    /* position: fixed; */
+}
+
+#wrapper{
+    position: fixed;
+    width: 100%;
+    height: 800px;
+    font-family: 'Roboto', sans-serif;
+
+    transition: 1000ms;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+#boston, #cal1, #cal2, #cal4, #cal5{
+    padding-top: 200px;
+    height: 800px;
+    z-index: 1;
+    position: relative;
+    margin-left: 640px;
+}
+
+#cal3{
+    height: 500px;
+    z-index: 1;
+    position: relative;
+    margin-left: 640px;
+}
+
+.details{
+    width: 250px;
+    color: aliceblue;
+}
+
+.btns{
+    margin-right: 15px;
+}
+
+/* #boston{
+    padding-top: 200px;
+    height: 1000px;
+} */
+
+
+  .colorOne{
+    background-image: url("../../assets/images/booknow/boston.jpg");
+    opacity: 0.5;
+  }
+  .colorTwo{
+    background-image: url("../../assets/images/booknow/sf.jpg");
+    opacity: 0.5;
+  }
+  .colorThree{
+    background-image: url("../../assets/images/booknow/fl.jpg");
+    opacity: 0.5;
+  }
+  .colorFour{
+    background-image: url("../../assets/images/booknow/la.jpg");
+    opacity: 0.5;
+  }
+  .colorFive{
+    background-image: url("../../assets/images/booknow/miami.jpg");
+    opacity: 0.5;
+  }
+  .colorSix{
+    background-image: url("../../assets/images/booknow/alaska.jpg");
+    opacity: 0.5;
+  }
+  .colorSeven{
+    background-image: url("../../assets/images/booknow/hawaii.jpg");
+    opacity: 0.5;
+  }
+  .colorEight{
+    background-image: url("../../assets/images/booknow/maui.jpg");
+    opacity: 0.5;
+  }
+  .colorNine{
+    background-image: url("../../assets/images/booknow/chicago.jpg");
+    opacity: 0.5;
+  }
+  .colorTen{
+    background-image: url("../../assets/images/booknow/sb.jpg");
+    opacity: 0.5;
+  }
+  .colorEleven{
+    background-image: url("../../assets/images/booknow/ny.jpg");
+    opacity: 0.5;
+  }
+  .colorTwelve{
+    background-image: url("../../assets/images/booknow/phila.jpg");
+    opacity: 0.5;
+  }
+  .colorThirteen{
+    background-image: url("../../assets/images/booknow/losa.jpg");
+    opacity: 0.5;
+  }

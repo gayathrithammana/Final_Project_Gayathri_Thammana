@@ -1,0 +1,31 @@
+<app-header></app-header>
+<span  *ngFor="let adventure of this.adventureObject;">
+<div id="wrapper">
+  <h1>{{this.adventureType}}</h1>
+</div>
+
+<div id="maindiv" >
+<h2><b>{{adventure.title}}</b></h2>
+<p class="details"><b>{{adventure.desc}}</b></p>
+<table style="color:aliceblue;">
+    <tr>
+        <th>Age Group |</th>
+        <td> {{adventure.age}}</td>
+    </tr>
+    <tr>
+        <th>Price/ person |</th>
+        <td> {{adventure.price}}</td>
+    </tr>
+    <tr>
+        <th>Availability |</th>
+        <td>{{adventure.Availability}}</td>
+    </tr>
+</table>
+<br>
+
+<a [routerLink]="['/accomodation']"><button class="btns" mat-raised-button>Accomodation</button></a>
+<a [routerLink]="['/transportTypes']"><button class="btns" mat-raised-button>Transport</button></a>
+<a [routerLink]="[advlink]"><button class="btns" mat-raised-button>Book Now</button></a>
+</div>
+</span>
+<app-footer></app-footer>

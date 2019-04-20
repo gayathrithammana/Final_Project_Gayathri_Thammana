@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="custom-card-deck container">
+  <article class="mb-4">
+    <h3>Choosing the Right Means of Transport</h3>
+    <h5>
+      Explore the best types of transportation to reach your adventure spot. We provide useful links 
+      on where to find more information and bookings.
+    </h5>
+  </article>
+  <div class="row">
+    <div class="custom-card col-lg-4 col-md-4 col-sm-6 col-xs-1" *ngFor="let transportType of transportTypes; let i = index;">
+      <div class="custom-card-body">
+          <a [routerLink]="[transportType.link]">
+            <img class="card-img-top" src="assets/images/transporttypes/type{{i}}.jpg" alt="{{transportType}}" />
+            <div class="card-view-btn">
+              <button class="btn btn-secondary">Explore</button>
+            </div>
+            <h5 class="card-title">{{transportType.name}}</h5>
+          </a>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<form [formGroup]="loginForm" (ngSubmit)="checkUserExist()">
+    <div formGroupName="userData">
+      <div class="form-group col-3">
+        <label for="email">Email *</label>
+        <input class="form-control" type="text" formControlName="email" id="email"/>
+        <span *ngIf="loginForm.get('userData.email').touched && !loginForm.get('userData.email').valid" class="text-danger"> 
+          <span *ngIf="loginForm.get('userData.email').errors['required']">
+            Email is required!
+          </span>
+          <span *ngIf="loginForm.get('userData.email').errors['nameIsForbidden']">
+            Please enter a valid Email Id
+          </span>  
+        </span>
+      </div>
+      <div class="form-group col-3">
+        <label for="password">Password *</label>
+        <input class="form-control" type="password" formControlName="password" id="password"/>
+        <span *ngIf="loginForm.get('userData.password').touched && !loginForm.get('userData.password').valid" class="text-danger"> 
+          <span *ngIf="loginForm.get('userData.password').errors['required']">
+            Password is required!
+          </span>    
+        </span>
+      </div>
+    </div>
+    
+    <div class="form-group col-3">
+      <button class="btn btn-primary" [disabled]="(waitForResponse) || (!loginForm.touched) || (!loginForm.valid && loginForm.touched)">Login</button>
+    </div>
+  </form>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-body">
+          <p>{{errorMsg}}</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="d('Cross click')">OK</button>
+      </div>
+  </ng-template>
+        

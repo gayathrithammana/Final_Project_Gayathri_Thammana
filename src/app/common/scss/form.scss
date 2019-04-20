@@ -1,0 +1,11 @@
+form{
+    margin-top: 5rem;
+    .form-group{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-primary.disabled, .btn-primary:disabled {
+        background-color: #ccc;
+        border-color: #ccc;
+    }
+}

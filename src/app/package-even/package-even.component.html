@@ -1,0 +1,124 @@
+<app-header></app-header>
+<span *ngIf="packageObject.length; else loading">
+  <span *ngFor= "let package of this.packageObject; let i = index" class="wrap">
+  <div class="row card-section shadow"  *ngIf="i%2==0">
+
+    <div class="btn-section">
+      <button (click)="Packagedetails(package.title)" class="btn-default button">Book</button>
+    </div>
+
+    <div class="col-lg-6 card-details" >
+      
+      <h1 class="card-title">
+    
+        {{package.title}} ({{package.price}})
+      </h1>
+      <div class="package-deal">{{package.days}} days | on Budget</div><br/>
+      <div class="card-desc">
+        <p>{{this.package.desc}}</p><br/><br/>
+        <table class="table">
+          <tr>
+              <th>Included</th>
+              <td>{{package.included}}</td>
+          </tr>
+          <tr>
+            <th>Departure City</th>
+            <td>{{package.departureCity}}</td>
+          </tr>
+          <tr>
+            <th>Departure Time</th>
+            <td>{{package.departureTime}}</td>
+          </tr>
+          <tr>
+            <th>Return Time</th>
+            <td>{{package.returnTime}}</td>
+          </tr>
+          <tr>
+            <th>Dress Code</th>
+            <td>{{package.dressCode}}</td>
+          </tr>
+          <tr>
+              <th>Cities</th>
+              <td>{{package.cities}}</td>
+          </tr>
+          <tr>
+            <th>Not Included</th>
+            <td>{{package.notIncluded}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-6 img-section">
+        <img class="img img-fluid1" src="{{package.img}}">
+      <!-- <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt=""> -->
+      <!-- <img ng-src="data:image/jpeg;base64, this.package.imgPath"> -->
+      <!-- <img [ng-src]=this.package.imgPath> -->
+
+    </div>
+  </div>
+
+
+  <div class="row card-section shadow"  *ngIf="i%2!=0" >   
+
+      <div class="btn-section" >
+        <button (click)="Packagedetails(package.title)" class="btn-default button">Book</button>
+      </div>
+    
+      <div class="col-lg-6 img-section" >
+          <!-- <img ng-src="data:image/jpeg;base64, this.package.imgPath">
+          {{this.package.img.data}} -->
+          <img class="img img-fluid1" src="{{package.img}}">
+        <!-- <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt="">-->
+      </div> 
+    
+      <div class="col-lg-6 card-details" >
+        
+        <h1 class="card-title">
+          {{package.title}} ({{package.price}})
+        </h1>
+        <div class="package-deal">{{package.days}} days |on Budget</div><br/>
+        <div class="card-desc">
+          <p>{{package.desc}}</p><br/>
+          <table class="table">
+            <tr>
+              <th>Included</th>
+              <td>{{package.included}}</td>
+            </tr>
+            <tr>
+              <th>Departure City</th>
+              <td>{{package.departureCity}}</td>
+            </tr>
+            <tr>
+              <th>Departure Time</th>
+              <td>{{package.departureTime}}</td>
+            </tr>
+            <tr>
+              <th>Return Time</th>
+              <td>{{package.returnTime}}</td>
+            </tr>
+            <tr>
+              <th>Dress Code</th>
+              <td>{{package.dressCode}}</td>
+            </tr>
+            <tr>
+              <th>Cities</th>
+              <td>{{package.cities}}</td>
+            </tr>
+            <tr>
+              <th>Not Included</th>
+              <td>{{package.notIncluded}}</td>
+            </tr>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+    
+  </span>
+</span>
+<ng-template #loading>
+  <div class="wrapper">
+      <div class="loader"></div>
+  </div>
+</ng-template>
+<app-footer></app-footer>

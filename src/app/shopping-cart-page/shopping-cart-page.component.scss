@@ -1,0 +1,25 @@
+.card-sec{
+    width: 18rem; 
+    margin-left:67.5%
+}
+.delete-icon{
+    cursor: pointer;
+}
+.cart-container{
+    margin-top: 5rem;
+    min-height: 900px;
+    .card-header{
+        text-align: center;
+    }
+}
+#paypal-checkout-btn{
+    margin-left: auto;
+    margin-right: auto;
+}
+.back-btn{
+    margin-left: 18%;
+    margin-top: 5rem;
+    a{
+        color: white;
+    }
+}

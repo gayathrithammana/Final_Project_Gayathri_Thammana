@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5cba74f6d0620c010012ab80"},"email":"hh@hh.com","packageDetails":{"title":"Charming California","date":"4-17-2019","time":"3:00 am to 5:00am EST","price":"1000$"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cba9cce307247332c4dabfb"},"email":"hh@hh.com","packageDetails":{"title":"Charming California","date":"4-17-2019","time":"11:00 am to 1:00am EST","price":"1000$"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cbaab32307247332c4dabfe"},"email":"n@n.com","packageDetails":{"title":"Charming California","date":"4-17-2019","time":"11:00 am to 1:00am EST","price":"1000$"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cbaab57307247332c4dabff"},"email":"n@n.com","packageDetails":{"title":"Charming California","date":"4-17-2019","time":"3:00 am to 5:00am EST","price":"1000$"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cbb23a1307247332c4dac00"},"email":"n@n.com","packageDetails":{"title":"3-Night%20Package","date":"4-17-2019","time":"11:00 am to 1:00am EST","price":"1000$"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cbb25a6307247332c4dac01"},"email":"n@n.com","packageDetails":{"title":"Scuba","date":"4-17-2019","time":"3:00 am to 5:00am EST","price":"1000$"},"__v":{"$numberInt":"0"}}

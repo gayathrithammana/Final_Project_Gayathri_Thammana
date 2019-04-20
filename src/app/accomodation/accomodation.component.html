@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div id="wrapper"></div>
+<div class="container sites-container">
+ <div class="mt-5 mb-3" *ngIf="accomodationSites.length; else loading"> 
+    <h3 class="text-white col-12">Book Accomodation</h3>
+    <article class="col-12 mt-4 mb-4">
+        <h5>
+            Explore the best sites for accomodation. Choose the US hotels with the best deals. Read hotel reviews, compare prices, and find cheap deals on all destinations in United States.
+        </h5>
+    </article>
+
+    <button class="ml-3 badge badge-pill" (click)="sortByValue='siteName'" [ngClass]="{'badge-primary':sortByValue==='siteName', 'badge-light':sortByValue!=='siteName'}">Sort By Name</button>
+    <button class="ml-3 badge badge-pill" (click)="sortByValue='siteRating'" [ngClass]="{'badge-primary':sortByValue==='siteRating', 'badge-light':sortByValue!=='siteRating'}">Sort By Rating</button>
+    <button class="ml-3 badge badge-pill" (click)="sortByValue='rangeFrom'" [ngClass]="{'badge-primary':sortByValue==='rangeFrom', 'badge-light':sortByValue!=='rangeFrom'}">Sort By Price</button>
+
+  <div class="site-deck row col-12 mt-4" *ngFor="let accomodationSite of accomodationSites | category: sortByValue; let i = index;">
+      <div class="site-card-left col-3">
+          <div>
+                <a href="{{accomodationSite.siteLink}}" target="none">
+                    <img class="site-card-img" [src]="getImgData(accomodationSite.img)">
+                </a>
+          </div>
+          
+      </div>
+
+      <div class="site-card-right col-9">
+          
+          <div class="row col-12">
+              <div class="col-6 pl-0col-7 col-sm-8 pl-0">
+                  <a href="{{accomodationSite.siteLink}}" target="none" class="site-card-link row m-0">{{accomodationSite.siteName}}</a>
+                  <span class="text-white row m-0">{{accomodationSite.siteDesc}}</span>
+                  <br>
+                  <br>
+
+                  <div class="row m-0">
+                    <i class="material-icons float-left text-white">email</i>
+                    <a href="mailto:{{accomodationSite.email}}" class="ml-2 mr-3 text-white">Email</a>
+                    
+                    
+                    <i class="material-icons float-left text-white">contact_phone</i>
+                    <a href="tel:{{accomodationSite.phone}}" class="ml-2 text-white">Phone</a>
+                  </div>
+                  
+              </div>
+              <div class="col-5 col-sm-4 site-card-price-container">
+                  <div class="site-card-rating">{{accomodationSite.siteRating}}*</div>
+                  <br>
+                  <span>From</span>
+                  <br>
+                  <h4 class="price">{{accomodationSite.rangeFrom}}/Day</h4>
+              </div>
+          </div>
+          
+      </div> 
+      
+  </div>
+  </div>
+</div>
+<ng-template #loading>
+    <div class="wrapper">
+        <div class="loader"></div>
+    </div>
+</ng-template>
+<app-footer></app-footer>

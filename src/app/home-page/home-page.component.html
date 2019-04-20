@@ -1,0 +1,109 @@
+<app-header></app-header>
+
+<!-- <audio id="audioback" autoplay>
+  <source src="../assets/Free-birds-chirping-sound-effect.mp3" type="audio/mp3">
+</audio> -->
+
+<router-outlet></router-outlet>
+<!-- Starting the parallax -->
+<div class="parallax_one">
+  <!-- <button id="mutebtn">Mute</button> -->
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <img class="carouselimage" src="../../assets/images/home/adventure11.jpg" alt="Random first slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img class="carouselimage" src="../../assets/images/home/adventure10.jpg"  alt="Random second slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img class="carouselimage" src="../../assets/images/home/adventure16.jpg" alt="Random third slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>  
+  </ngb-carousel>
+  <div id="inparallax">
+    <h1>Make your life Adventurous</h1>
+  </div>
+</div>
+  <br>
+  <div id= introdiv>
+      <p id="intro">If adventure sports and extreme activities press all your buttons, get ready for the trip of a lifetime</p>
+    <div id="introimage">
+        <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" height="470px">
+            <source src="../../assets/images/home/Sail.mp4" type="video/mp4">
+        </video>
+    </div>
+  </div>
+  
+  <div id="parallax_two">
+  
+  </div>
+
+  <br>
+
+  <div class="container">
+      <p id="trending" style="text-align: center; color: aliceblue;">Our Individual Adventures</p>
+      <br>  
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card">
+              <img class="card-img-top w-100" src="../../assets/images/home/adventure4.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">Scuba Diving</h4>
+                <a [routerLink]="['/Scuba']"><button class="expbtn" mat-raised-button>Experience It!</button></a>
+              </div>
+          </div>
+        
+        </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="../../assets/images/home/adventure5.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Bungee Jumping</h4>
+                <a [routerLink]="['/BungeeJumping']"><button class="expbtn" mat-raised-button>Experience It!</button></a>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="../../assets/images/home/adventure6.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">River Rafting</h4>
+                <a [routerLink]="['/RiverRafting']"><button class="expbtn" mat-raised-button>Experience It!</button></a>
+                
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="../../assets/images/home/adventure15.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Paragliding</h4>
+                <a [routerLink]="['/Paragliding']"><button class="expbtn" mat-raised-button>Experience It!</button></a>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div id="parallax_three"></div>
+
+  <div class="container">
+    <div id="thirdbackground">
+      <p id="book">Impressed with the adventures? Check out our packages here</p>
+
+      <br>
+      <a [routerLink]="['/packagelist']"><button id="discover" class="expbtn" mat-raised-button>Discover More</button></a>
+    </div>
+  </div>
+
+  <div id="parallax_four"></div>
+<app-footer></app-footer>

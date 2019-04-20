@@ -1,0 +1,104 @@
+<app-header></app-header>
+<div id="wrapper" [ngClass]="{'rentalcars': (transportName == 'Rental Cars'), 
+                               'railtravels': (transportName == 'Rail Travels'), 
+                               'flights': (transportName == 'Flights'),
+                               'motorcycle': (transportName == 'Motorcycle Rentals'),
+                               'bus': (transportName == 'Bus & Coach Transport'),
+                               'ferries': (transportName == 'Ferries & Cruise Ships')}">
+</div>
+
+<div class="container sites-container">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><b><a [routerLink]="['/transportTypes']">Transport Types</a></b></li>
+            <li class="breadcrumb-item active" aria-current="page"><b>{{transportName}}</b></li>
+        </ol>
+    </nav>
+
+    <article class="col-12 mb-4">
+        <h5 *ngIf="(transportName == 'Rental Cars')">
+            Road tripping is one of the world’s most popular forms of travel.Whether it’s a short few days jaunt or month’s 
+            at time driving around a country or a region, a road trip is one of the easiest ways to see the world.
+            Here are best rated sites, provides rental cars at cheapest price.
+        </h5>
+        <h5 *ngIf="(transportName == 'Rail Travels')">
+            In certain parts of the world, trains are the most commonly used means of transport for visitor and locals. 
+            And in most parts of the world, they are by far the fastest way to get around.
+        </h5>
+        <h5 *ngIf="(transportName == 'Flights')">
+            If you travel with any sort of frequency — or even if you don’t — it’s worth taking the time to learn how to pick flights effectively. 
+            Choose good flights from below helpful links to reach your favourite destination.
+        </h5>
+        <h5 *ngIf="(transportName == 'Motorcycle Rentals')">
+            If you are interested in hiring a motor bike, you are best to do this in the destination
+            when you arrive for the best deals.
+        </h5>
+        <h5 *ngIf="(transportName == 'Bus & Coach Transport')">
+            In areas where there a no, or very slow trains, the bus is your next best option for getting around.
+            Buses or coaches are available in every country of the world and connect major cities with regional towns.
+            Choose a bus if you have lots of time or are on a tight budget.
+        </h5>
+        <h5 *ngIf="(transportName == 'Ferries & Cruise Ships')">
+            If you are looking for an all-inclusive, unpack once type of holiday with stacks of entertainment, 
+            then look no further than a cruise.Great deals can be found for cruises, 
+            especially packages that include all your meals, drinks and entertainment.
+        </h5>
+    </article>
+
+ <div class="mt-5 mb-3" *ngIf="transportSites.length; else loading"> 
+    
+    <button class="ml-3 badge badge-pill" (click)="sortByValue='siteName'" [ngClass]="{'badge-primary':sortByValue==='siteName', 'badge-light':sortByValue!=='siteName'}">Sort By Name</button>
+    <button class="ml-3 badge badge-pill" (click)="sortByValue='siteRating'" [ngClass]="{'badge-primary':sortByValue==='siteRating', 'badge-light':sortByValue!=='siteRating'}">Sort By Rating</button>
+    <button class="ml-3 badge badge-pill" (click)="sortByValue='rangeFrom'" 
+            *ngIf="transportName == 'Rental Cars' || transportName == 'Motorcycle Rentals'"
+            [ngClass]="{'badge-primary':sortByValue==='rangeFrom', 'badge-light':sortByValue!=='rangeFrom'}">Sort By Price</button>
+
+    <div class="site-deck row col-12 mt-4" *ngFor="let transportSite of transportSites | category: sortByValue; let i = index;">
+      <div class="site-card-left col-3">
+          <div>
+                <a href="{{transportSite.siteLink}}" target="none">
+                    <img class="site-card-img" [src]="getImgData(transportSite.img)">
+                </a>
+          </div>
+          
+      </div>
+
+      <div class="site-card-right col-9">
+          
+          <div class="row col-12">
+              <div class="col-7 col-sm-8 pl-0">
+                  <a href="{{transportSite.siteLink}}" target="none" class="site-card-link row m-0">{{transportSite.siteName}}</a>
+                  <span class="text-white row m-0">{{transportSite.siteDesc}}</span>
+                  <br>
+                  <br>
+                  <div class="row m-0">
+                    <i class="material-icons float-left text-white">email</i>
+                    <a href="mailto:{{transportSite.email}}" class="ml-2 mr-3 text-white">Email</a>
+                    
+                    
+                    <i class="material-icons float-left text-white">contact_phone</i>
+                    <a href="tel:{{transportSite.phone}}" class="ml-2 text-white">Phone</a>
+                  </div>
+                  
+              </div>
+              <div class="col-5 col-sm-4 site-card-price-container">
+                  <div class="site-card-rating">{{transportSite.siteRating}}*</div>
+                  <br>
+                  <span *ngIf="transportSite.rangeFrom">From</span>
+                  <br>
+                  <h4 class="price" *ngIf="transportSite.rangeFrom">{{transportSite.rangeFrom}}/Day</h4>
+              </div>
+          </div>
+          
+      </div> 
+      
+  </div>
+</div>
+</div> 
+<ng-template #loading>
+    <div class="wrapper">
+        <div class="loader"></div>
+    </div>
+</ng-template>
+<app-footer></app-footer>

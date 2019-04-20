@@ -1,0 +1,69 @@
+<app-header></app-header>
+<form [formGroup]="signupForm" (ngSubmit)="creteUser()">
+  <div formGroupName="signupData">
+    <div class="form-group col-3">
+      <label for="firstName">First Name *</label>
+      <input formControlName="firstName" class="form-control" type="text" id="firstName"/>
+      <span *ngIf="signupForm.get('signupData.firstName').touched && !signupForm.get('signupData.firstName').valid" class="text-danger"> 
+        <span *ngIf="signupForm.get('signupData.firstName').errors['required']">
+          First Name is required!
+        </span>
+      </span>
+    </div>
+    <div class="form-group col-3">
+      <label for="lastName">Last Name *</label>
+      <input formControlName="lastName" class="form-control" type="text" id="lastName"/>
+      <span *ngIf="signupForm.get('signupData.lastName').touched && !signupForm.get('signupData.lastName').valid" class="text-danger"> 
+        <span *ngIf="signupForm.get('signupData.lastName').errors['required']">
+          Last Name is required!
+        </span>
+      </span>
+    </div>
+    <div class="form-group col-3">
+      <label for="email">Email *</label>
+      <input formControlName="email" class="form-control" type="text" id="email"/>
+      <span *ngIf="signupForm.get('signupData.email').touched && !signupForm.get('signupData.email').valid" class="text-danger"> 
+        <span *ngIf="signupForm.get('signupData.email').errors['required'];">
+          Email Id is required!
+        </span>
+        <span *ngIf="signupForm.get('signupData.email').errors['email']">
+          Please enter a valid Email Id
+        </span>
+      </span>
+    </div>
+    <div class="form-group col-3">
+      <label for="password">Password *</label>
+      <input formControlName="password" class="form-control" type="password" id="password"/>
+      
+      <span *ngIf="signupForm.get('signupData.password').touched && !signupForm.get('signupData.password').valid" class="text-danger"> 
+        <span *ngIf="signupForm.get('signupData.password').errors['required']; else paswordContent">
+          Password is required!
+        </span>
+        <ng-template #paswordContent>
+          <span *ngIf="signupForm.get('signupData.password').errors['nameIsForbidden'] || !signupForm.get('signupData.password').valid">
+            Please enter a valid Password
+          </span> 
+        </ng-template> 
+      </span>
+
+      <span class="row m-0 text-info">
+          (Password should contain atleast special character and should be 5 characters long.)
+        </span>
+    </div>
+  </div>
+
+  <div class="form-group col-3">
+    <button class="btn btn-primary" [disabled]="(waitForResponse) || (!signupForm.touched) || (!signupForm.valid && signupForm.touched)">Sign Up</button>
+    <!--<a [routerLink]="['/login']" class="btn btn-link">Login</a>-->
+  </div>
+  
+</form>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-body">
+        <p>{{msg}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="d('Cross click')">OK</button>
+    </div>
+</ng-template>

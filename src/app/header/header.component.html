@@ -1,0 +1,43 @@
+<div class="header-container">
+  <aside class="side-navigation">
+    <div class="context-menu" (click)="openSideNav()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+
+        <div class="title-menu">Menu</div>
+    </div>  
+  </aside>
+
+  <div class="main-logo">
+      <img src="assets/images/common/icon.jpg" alt="Adventure Planet" class="rounded-circle"/>
+    </div>
+
+  <form class="form-inline my-2 my-lg-0">
+      <div *ngIf="this.userObject;else login" class="user-name">
+        <a [routerLink]="['/scpackage']"><img id="carticon" src="../../assets/images/home/cart_w.png" alt=""></a>  
+        <span id="welcometxt">Welcome, {{this.currentUser}} </span>
+        <a (click)="logout()"><button class="btn btn-outline-info my-2 my-sm-0" type="button">Logout</button></a>
+      </div>
+      <ng-template #login>
+      <a [routerLink]="['/login']"><button class="btn btn-outline-info my-2 my-sm-0  mr-3" type="button">Login</button></a>
+      <a [routerLink]="['/signup']"><button class="btn btn-outline-info my-2 my-sm-0" type="button">SignUp</button></a>
+      </ng-template>
+  </form>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button> 
+  </div>
+  <div class="modal-body">
+    <a class="row nav-link" [routerLink]="['/home']">Home</a>
+    <a class="row nav-link" [routerLink]="['/packagelist']">Packages</a>
+    <a class="row nav-link" [routerLink]="['/transportTypes']">Transport</a>
+    <a class="row nav-link" [routerLink]="['/accomodation']">Accomodation</a>
+    <hr class="mt-1 mb-1">
+    <a class="row nav-link" [routerLink]="['/blog']">Blog</a>
+  </div>
+</ng-template>
